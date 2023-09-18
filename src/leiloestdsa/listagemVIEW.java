@@ -6,6 +6,7 @@ package leiloestdsa;
 
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
 
 /**
  *
@@ -19,7 +20,6 @@ public class listagemVIEW extends javax.swing.JFrame {
                 List<ProdutosDTO> listaproduto =  produtosDAO.getProdutos();
             
                 DefaultTableModel tabelaproduto = (DefaultTableModel) listaProdutos.getModel();
-                      
                 for (ProdutosDTO c : listaproduto) { 
                     Object[] obj = new Object[] { 
                         c.getId(),            
@@ -116,12 +116,12 @@ public class listagemVIEW extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnVender))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(layout.createSequentialGroup()
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                             .addComponent(btnVoltar)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(btnVendas, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(31, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -158,15 +158,16 @@ public class listagemVIEW extends javax.swing.JFrame {
     }//GEN-LAST:event_btnVoltarActionPerformed
 
     private void btnVenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVenderActionPerformed
-        String id = id_produto_venda.getText();
-        ProdutosDAO produtosdao = new ProdutosDAO();
-        produtosdao.venderProduto(Integer.parseInt(id));
-        produtosdao.listarProdutos();
+       // String id = id_produto_venda.getText();
+       // ProdutosDAO produtosdao = new ProdutosDAO();
+       // produtosdao.venderProduto(Integer.parseInt(id));
+       // produtosdao.listarProdutos();
     }//GEN-LAST:event_btnVenderActionPerformed
 
     private void btnVendasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVendasActionPerformed
-        vendasVIEW vendas = new vendasVIEW();
-        vendas.setVisible(true);
+
+        //vendasVIEW vendas = new vendasVIEW();
+        //vendas.setVisible(true);
     }//GEN-LAST:event_btnVendasActionPerformed
 
     /**
